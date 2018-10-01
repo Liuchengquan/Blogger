@@ -1,5 +1,7 @@
 #coding=utf-8
 import itchat,time
+import matplotlib.pyplot as plt
+
 itchat.login()
 #微信好友男女比例分析
 friends=itchat.get_friends(update=True)[0:]
@@ -22,6 +24,16 @@ print "好友数量: ",male+female+other
 print "男性好友: ",male
 print "女性好友: ",female
 print "性别不明: ",other
+
+labels="male","female","other"
+sizes=[(float(male)/total*100),(float(female)/total*100),(float(other)/total*100)]
+colors=['yellowgreen','gold','lightskyblue']
+explode=(0,0.1,0)
+
+plt.pie(sizes,explode=explode,labels=labels,colors=colors,autopct='%1.1f%%',shadow=True,startangle=90)
+plt.axis('equal')
+plt.show()
+
 #微信好友信息获取
 
 """import itchat as it
