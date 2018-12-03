@@ -1,6 +1,7 @@
 #coding=utf8
 import requests
 import itchat
+import time
 
 KEY = '8edce3ce905a4c1dbb965e6b35c3834d'
 
